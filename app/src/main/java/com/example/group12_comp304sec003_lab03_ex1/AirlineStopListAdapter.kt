@@ -67,10 +67,13 @@ class AirlineAdapter(
         @SuppressLint("SimpleDateFormat")
         fun bind(schedule: AirlineSchedule) {
             binding.airlineNameTextView.text = schedule.airlineName
+
+            binding.terminalNumberTextView.text = schedule.terminalNumber
             binding.arrivalTimeTextView.text = SimpleDateFormat(
                 "h:mm a").format(Date(schedule.arrivalTime.toLong() * 1000)
             )
-            binding.terminalNumberTextView.text = schedule.terminalNumber
+            binding.statusTextView.text = schedule.status
+
         }
     }
 }

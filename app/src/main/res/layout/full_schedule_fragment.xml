@@ -11,11 +11,11 @@
         android:id="@+id/airline_header"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="airline_header"
-        android:textSize="16sp"
+        android:text="Airline"
+        android:textSize="12sp"
         android:gravity="center_horizontal"
         android:padding="8dp"
-        app:layout_constraintWidth_percent="0.33"
+        app:layout_constraintWidth_percent="0.25"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/arrival_time_header"/>
@@ -24,11 +24,11 @@
         android:id="@+id/arrival_time_header"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="arrival_time_header"
-        android:textSize="16sp"
+        android:text="Arrival Time"
+        android:textSize="12sp"
         android:gravity="center_horizontal"
         android:padding="8dp"
-        app:layout_constraintWidth_percent="0.34"
+        app:layout_constraintWidth_percent="0.25"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/airline_header"
         app:layout_constraintEnd_toStartOf="@id/terminal_number_header"/>
@@ -38,12 +38,25 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Terminal No."
-        android:textSize="16sp"
+        android:textSize="12sp"
         android:gravity="center_horizontal"
         android:padding="8dp"
-        app:layout_constraintWidth_percent="0.33"
+        app:layout_constraintWidth_percent="0.25"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/arrival_time_header"
+        app:layout_constraintEnd_toEndOf="@id/status_header"/>
+
+    <TextView
+        android:id="@+id/status_header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Status"
+        android:textSize="12sp"
+        android:gravity="center_horizontal"
+        android:padding="8dp"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/terminal_number_header"
         app:layout_constraintEnd_toEndOf="parent"/>
 
 
