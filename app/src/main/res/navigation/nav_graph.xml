@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/fullScheduleFragment"
         android:name="com.example.group12_comp304sec003_lab03_ex1.FullScheduleFragment"
-        android:label="full_schedule_fragment"
+        android:label="Airline Schedule"
         tools:layout="@layout/full_schedule_fragment" >
         <action
             android:id="@+id/action_fullScheduleFragment_to_stopScheduleFragment"
