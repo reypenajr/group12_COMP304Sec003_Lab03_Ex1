@@ -56,7 +56,7 @@ class StopScheduleFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         recyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        val airlineAdapter = AirlineAdapter({})
+        val airlineAdapter = AirlineAdapter(showStatus = true,{})
         // by passing in the stop name, filtered results are returned,
         // and tapping rows won't trigger navigation
         recyclerView.adapter = airlineAdapter

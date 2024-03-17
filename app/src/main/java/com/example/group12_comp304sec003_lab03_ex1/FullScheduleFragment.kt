@@ -44,7 +44,8 @@ class FullScheduleFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         recyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        val airlineAdapter = AirlineAdapter({
+        val airlineAdapter = AirlineAdapter(
+            showStatus = false,{
             val action = FullScheduleFragmentDirections
                 .actionFullScheduleFragmentToStopScheduleFragment(it.airlineName)
 

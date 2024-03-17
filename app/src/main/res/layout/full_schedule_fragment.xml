@@ -37,27 +37,14 @@
         android:id="@+id/terminal_number_header"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="8dp"
         android:text="Terminal No."
         android:textSize="12sp"
-        android:gravity="center_horizontal"
-        android:padding="8dp"
-        app:layout_constraintWidth_percent="0.25"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/arrival_time_header"
-        app:layout_constraintEnd_toEndOf="@id/status_header"/>
-
-    <TextView
-        android:id="@+id/status_header"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Status"
-        android:textSize="12sp"
-        android:gravity="center_horizontal"
-        android:padding="8dp"
-        app:layout_constraintWidth_percent="0.25"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/terminal_number_header"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintWidth_percent="0.25" />
 
 
     <androidx.recyclerview.widget.RecyclerView

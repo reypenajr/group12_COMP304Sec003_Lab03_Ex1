@@ -17,6 +17,7 @@ package com.example.group12_comp304sec003_lab03_ex1
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.DiffUtil
@@ -27,6 +28,7 @@ import java.text.SimpleDateFormat
 import java.util.Date
 
 class AirlineAdapter(
+    private val showStatus: Boolean = false,
     private val onItemClicked: (AirlineSchedule) -> Unit
 ) : ListAdapter<AirlineSchedule, AirlineAdapter.AirlineViewHolder>(DiffCallback) {
 
@@ -45,7 +47,7 @@ class AirlineAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AirlineViewHolder {
         val viewHolder = AirlineViewHolder(
             AirlineItemBinding.inflate(
-                LayoutInflater.from( parent.context),
+                LayoutInflater.from(parent.context),
                 parent,
                 false
             )
@@ -58,22 +60,24 @@ class AirlineAdapter(
     }
 
     override fun onBindViewHolder(holder: AirlineViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position), showStatus)
     }
 
     class AirlineViewHolder(
         private var binding: AirlineItemBinding
-    ): RecyclerView.ViewHolder(binding.root) {
+    ) : RecyclerView.ViewHolder(binding.root) {
         @SuppressLint("SimpleDateFormat")
-        fun bind(schedule: AirlineSchedule) {
+        fun bind(schedule: AirlineSchedule, showStatus: Boolean) {
             binding.airlineNameTextView.text = schedule.airlineName
-
             binding.terminalNumberTextView.text = schedule.terminalNumber
-            binding.arrivalTimeTextView.text = SimpleDateFormat(
-                "h:mm a").format(Date(schedule.arrivalTime.toLong() * 1000)
-            )
-            binding.statusTextView.text = schedule.status
+            binding.arrivalTimeTextView.text = SimpleDateFormat("h:mm a").format(Date(schedule.arrivalTime.toLong() * 1000))
 
+            if (showStatus) {
+                binding.statusTextView.visibility = View.VISIBLE
+                binding.statusTextView.text = schedule.status
+            } else {
+                binding.statusTextView.visibility = View.GONE
+            }
         }
     }
 }
